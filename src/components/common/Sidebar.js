@@ -5,10 +5,10 @@ import Tab from './Tab';
 
 const Sidebar = () => {
   const [tabs] = React.useState([
-    { content: 'Welcome', href: 'intro' },
-    { content: 'Who we are', href: 'one' },
-    { content: 'What we do', href: 'two' },
-    { content: 'Get in touch', href: 'three' },
+    { content: 'Início', href: 'intro' },
+    { content: 'Sobre', href: 'one' },
+    { content: 'Soluções', href: 'two' },
+    { content: 'Contato', href: 'three' },
   ]);
 
   return (
@@ -20,12 +20,14 @@ const Sidebar = () => {
             currentClassName="active"
             offset={-300}
           >
-            {tabs.map(tab => <Tab key={tab.href} {...tab} />)}
+            {tabs.map(tab => (
+              <Tab key={tab.href} {...tab} />
+            ))}
           </Scrollspy>
         </nav>
       </div>
     </section>
   );
-}
+};
 
 export default Sidebar;
